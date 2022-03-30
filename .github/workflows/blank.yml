@@ -11,8 +11,8 @@ jobs:
         steps:
             - uses: actions/checkout@main
             - uses: actions/setup-python@v3
-                with:
-                    python-version: 3.8
+              with:
+                python-version: 3.8
             - run: zip -r package.zip ./*
             - run: pip3 install awscli
             - run: aws lambda update-function-code --function-name DeployTest --zip-file fileb://package.zip --publish
